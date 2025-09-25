@@ -1,4 +1,3 @@
-https://github.com/HRiyami/simple-calculator
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -31,7 +30,7 @@ https://github.com/HRiyami/simple-calculator
             font-size: 24px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            background-color: #fafafa;
+            box-sizing: border-box;
         }
         .buttons {
             display: grid;
@@ -39,32 +38,32 @@ https://github.com/HRiyami/simple-calculator
             gap: 10px;
         }
         button {
-            height: 40px;
+            padding: 10px;
             font-size: 18px;
-            cursor: pointer;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 4px;
-            background-color: #e6e6e6;
-            transition: background-color 0.2s ease;
+            cursor: pointer;
         }
         button:hover {
-            background-color: #d4d4d4;
+            opacity: 0.8;
         }
         button.operation {
-            background-color: #ffd966;
-        }
-        button.operation:hover {
-            background-color: #ffca33;
+            background-color: #f0ad4e;
+            color: #fff;
         }
         button.equals {
             background-color: #5bc0de;
-        }
-        button.equals:hover {
-            background-color: #31b0d5;
+            color: #fff;
         }
         button.clear {
             background-color: #d9534f;
             color: #fff;
+        }
+        button.operation:hover {
+            background-color: #d49c44;
+        }
+        button.equals:hover {
+            background-color: #31b0d5;
         }
         button.clear:hover {
             background-color: #c9302c;
@@ -73,35 +72,42 @@ https://github.com/HRiyami/simple-calculator
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" class="display" readonly />
+        <input type="text" id="display" class="display" readonly>
         <div class="buttons">
             <button onclick="append('7')">7</button>
             <button onclick="append('8')">8</button>
             <button onclick="append('9')">9</button>
             <button class="operation" onclick="append('/')">÷</button>
+
             <button onclick="append('4')">4</button>
             <button onclick="append('5')">5</button>
             <button onclick="append('6')">6</button>
             <button class="operation" onclick="append('*')">×</button>
+
             <button onclick="append('1')">1</button>
             <button onclick="append('2')">2</button>
             <button onclick="append('3')">3</button>
             <button class="operation" onclick="append('-')">−</button>
+
             <button onclick="append('0')">0</button>
             <button onclick="append('.')">.</button>
             <button class="equals" onclick="calculate()">=</button>
             <button class="operation" onclick="append('+')">+</button>
+
             <button class="clear" onclick="clearDisplay()">C</button>
         </div>
-   <script>
+    </div>
+
+    <script>
         function append(value) {
             const display = document.getElementById('display');
-      display.value += value;
+            display.value += value;
         }
 
         function calculate() {
             const display = document.getElementById('display');
             try {
+                // Use eval to compute the expression
                 display.value = eval(display.value);
             } catch (e) {
                 display.value = 'Error';
@@ -112,9 +118,6 @@ https://github.com/HRiyami/simple-calculator
             const display = document.getElementById('display');
             display.value = '';
         }
-    <</script>
-        
-    </div>
-
+    </script>
 </body>
 </html>
