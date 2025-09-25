@@ -93,33 +93,25 @@
             <button class="clear" onclick="clearDisplay()">C</button>
         </div>
           <script>
-                  f    function append(value) {
-        const display = document.getElementById('display');
-        display.value += value;
-    }
-
-    function calculate() {
-        const display = document.getElementById('display');
-        try {
-            display.value = eval(display.value);
-        } catch (e) {
-            display.value = 'Error';
+                function append(value) {
+            const display = document.getElementById('display');
+            display.value += value;
         }
-    }
 
-    function clearDisplay() {
-        const display = document.getElementById('display');
-        display.value = '';
-    }
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                display.value = eval(display.value);
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
 
-    function clearDisplay() {
-        const display = document.getElementById('display');
-        display.value = '';
-    }
-         const display = document.getElementById('display');
-                            display.value = '';
-                          }
-                </script>
+        function clearDisplay() {
+            const display = document.getElementById('display');
+            display.value = '';
+        }
+          </script>>
         
     </div>
 
